@@ -5,7 +5,7 @@ data "aws_ami" "ui" {
     name   = "tag:Application"
     values = ["tt-ui"]
   }
-}
+} 
 
 data "aws_ami" "api" {
   most_recent = true
