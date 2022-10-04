@@ -137,7 +137,7 @@ resource "aws_launch_configuration" "tt_asg_ui_lc" {
   security_groups = [aws_security_group.tt_api_alb_sg.id]
   user_data       = <<EOF
   #!/bin/bash
-  sed -i "/^\([[:space:]]*API_ENDPOINT:\).*/s//\1\"${aws_lb.tt_api_alb.dns_name}\"/" ~/app/build/env-config.js
+  sed -i "/^\([[:space:]]*API_ENDPOINT:\).*/s//\1\"${aws_lb.tt_api_alb.dns_name}\"/" /home/ubuntu/app/build/env-config.js
   EOF
 }
 
